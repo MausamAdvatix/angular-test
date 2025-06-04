@@ -13,13 +13,16 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { CommonModule } from '@angular/common';
+import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
     LoginComponent,
-    SideNavComponent
+    SideNavComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -27,12 +30,13 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-      MatSidenavModule,
+    MatSidenavModule,
     MatToolbarModule,
     MatListModule,
     MatIconModule,
-    MatButtonModule
-    
+    MatButtonModule,
+    CommonModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
