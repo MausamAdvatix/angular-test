@@ -1,0 +1,37 @@
+.sidenav-container {
+    height: 100vh;
+}
+
+.content {
+    padding: 16px;
+}
+
+.submenu {
+    padding-left: 20px;
+}
+
+.menu-header {
+    cursor: pointer;
+}
+.custom-sidenav {
+  width: 60px;
+  transition: width 0.3s ease;
+  overflow-x: hidden;
+}
+
+.custom-sidenav.expanded {
+  width: 220px;
+}
+
+.custom-sidenav mat-nav-list a .text {
+  margin-left: 10px;
+  transition: opacity 0.2s ease;
+}
+
+.submenu a {
+  padding-left: 40px;
+}
+
+.menu-header {
+  cursor: pointer;
+}

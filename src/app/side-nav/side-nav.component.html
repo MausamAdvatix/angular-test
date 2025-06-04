@@ -1,0 +1,41 @@
+<ng-container *ngIf="!isLoginPage()">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer mode="side" opened>
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/dashboard">Dashboard</a>
+        <a mat-list-item routerLink="/profile">home</a>
+
+        <mat-list-item (click)="toggleSettings()" class="menu-header">
+          <mat-icon>{{ settingsOpen ? 'expand_less' : 'expand_more' }}</mat-icon>
+          <span>Settings</span>
+        </mat-list-item>
+
+        <div *ngIf="settingsOpen" class="submenu">
+          <a mat-list-item routerLink="/dashboard">General</a>
+          <a mat-list-item routerLink="/home">Security</a>
+        </div>
+       </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button mat-icon-button (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Sam project</span>
+        <a style="text-align: end;" mat-list-item (click)="logout()">Logout</a>
+
+      </mat-toolbar>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</ng-container>
+
+<!-- Show only login -->
+<ng-container *ngIf="isLoginPage()">
+  <router-outlet></router-outlet>
+</ng-container>
